@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── iOS safe-area helpers ───────────────────────────────── */
+:root {
+  --sat: env(safe-area-inset-top,    0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left,   0px);
+  --sar: env(safe-area-inset-right,  0px);
+}
+
+html, body, #root {
+  height: 100%;
+  overscroll-behavior: none;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  @apply font-sans bg-sys-bg text-sys-label antialiased;
+  @apply dark:bg-black dark:text-white;
+  /* Prevent rubber-band scroll on iOS */
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+}
+
+#root {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Scrollable content area ─────────────────────────────── */
+.scroll-content {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+/* ── iOS-style tap highlight removal ─────────────────────── */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+input, textarea, select {
+  -webkit-touch-callout: default;
+  -webkit-user-select: text;
+}
+
+/* ── Number input: hide spinners ─────────────────────────── */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* ── iOS-style separator ─────────────────────────────────── */
+.ios-separator {
+  @apply h-px bg-sys-separator dark:bg-white/10;
+}
+
+/* ── Card ────────────────────────────────────────────────── */
+.ios-card {
+  @apply bg-sys-bg2 rounded-ios-lg shadow-ios-card;
+  @apply dark:bg-[#1C1C1E];
+}
+
+/* ── Bottom tab bar ──────────────────────────────────────── */
+.tab-bar {
+  padding-bottom: calc(var(--sab) + 4px);
+  flex-shrink: 0;
+}
+
+/* ── Page header with status-bar padding ─────────────────── */
+.page-header {
+  padding-top: calc(var(--sat) + 8px);
+}
+
+/* ── Smooth transitions ───────────────────────────────────── */
+.page-enter {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+/* ── Recharts tooltip ─────────────────────────────────────── */
+.recharts-tooltip-wrapper {
+  border-radius: 10px !important;
+  overflow: hidden;
+}

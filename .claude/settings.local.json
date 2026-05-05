@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\davew\\\\Documents\\\\source\\\\app-store\" -ErrorAction SilentlyContinue | Select-Object Name, LastWriteTime | Format-Table -AutoSize; if \\(-not $?\\) { \"Directory is empty\" })",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\davew\\\\Documents\\\\source\\\\app-store\" -Recurse -Exclude \"node_modules\",\".claude\" | Where-Object { -not $_.PSIsContainer } | Select-Object FullName | Sort-Object FullName | Format-Table -AutoSize -Wrap)",
+      "PowerShell(npm run *)",
+      "Bash(awk -F',' 'NR>1 {gsub\\(/\"/, \"\", $4\\); print $4}' \"/c/Users/davew/Documents/source/app-store/strong_workouts.csv\")",
+      "Bash(awk '{print $2}')",
+      "Bash(python3 *)",
+      "Bash(python3.exe --version)",
+      "Bash(python.exe --version)",
+      "Bash(py --version)",
+      "Bash(py *)"
+    ]
+  }
+}

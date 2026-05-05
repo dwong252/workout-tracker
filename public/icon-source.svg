@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background -->
+  <rect width="512" height="512" rx="114" fill="#007AFF"/>
+  <!-- Dumbbell icon (centered, white) -->
+  <!-- Left weight plate -->
+  <rect x="60"  y="218" width="52" height="76" rx="14" fill="white"/>
+  <!-- Left bar segment -->
+  <rect x="112" y="238" width="88" height="36" rx="6"  fill="white"/>
+  <!-- Center bar -->
+  <rect x="200" y="228" width="112" height="56" rx="10" fill="white"/>
+  <!-- Right bar segment -->
+  <rect x="312" y="238" width="88" height="36" rx="6"  fill="white"/>
+  <!-- Right weight plate -->
+  <rect x="400" y="218" width="52" height="76" rx="14" fill="white"/>
+</svg>
