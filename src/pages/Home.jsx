@@ -170,7 +170,7 @@ export default function Home() {
                     <div className="flex items-center gap-2">
                       <BodyPartBadge bodyPart={pr.bodyPart} />
                       <PRBadge />
-                      <span className="text-sm font-bold text-ios-blue">{formatWeight(pr.rm)} kg 1RM</span>
+                      <span className="text-sm font-bold text-ios-blue">{formatWeight(pr.rm)} lb 1RM</span>
                     </div>
                   </div>
                   {i < prs.length - 1 && <div className="ios-separator ml-4" />}

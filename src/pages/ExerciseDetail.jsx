@@ -77,7 +77,7 @@ export default function ExerciseDetail() {
   }))
 
   const chartKey   = tab === '1rm' ? '1RM' : tab === 'volume' ? 'Volume' : 'Weight'
-  const chartLabel = tab === '1rm' ? 'Est. 1RM (kg)' : tab === 'volume' ? 'Volume (kg)' : 'Max Weight (kg)'
+  const chartLabel = tab === '1rm' ? 'Est. 1RM (lb)' : tab === 'volume' ? 'Volume (lb)' : 'Max Weight (lb)'
 
   return (
     <div className="flex flex-col h-full overflow-hidden">
@@ -91,7 +91,7 @@ export default function ExerciseDetail() {
             <>
               <PRBadge />
               <span className="text-sm font-semibold text-sys-label dark:text-white">
-                {formatWeight(allTimePR)} kg 1RM
+                {formatWeight(allTimePR)} lb 1RM
               </span>
             </>
           )}
@@ -100,10 +100,10 @@ export default function ExerciseDetail() {
         {/* Stat cards */}
         <div className="grid grid-cols-3 gap-2">
           <StatCard label="Sessions" value={history.length} icon={<Layers size={14} className="text-ios-blue" />} />
-          <StatCard label="Best 1RM" value={allTimePR > 0 ? `${formatWeight(allTimePR)} kg` : '—'} icon={<Trophy size={14} className="text-yellow-500" />} />
+          <StatCard label="Best 1RM" value={allTimePR > 0 ? `${formatWeight(allTimePR)} lb` : '—'} icon={<Trophy size={14} className="text-yellow-500" />} />
           <StatCard
             label="Best Weight"
-            value={latestEntry ? `${formatWeight(latestEntry.maxWeight)} kg` : '—'}
+            value={latestEntry ? `${formatWeight(latestEntry.maxWeight)} lb` : '—'}
             icon={<TrendingUp size={14} className="text-ios-green" />}
           />
         </div>
@@ -183,7 +183,7 @@ export default function ExerciseDetail() {
                       <div className="flex items-center gap-2">
                         {isPR && <PRBadge />}
                         <span className="text-sm font-bold" style={{ color }}>
-                          {formatWeight(h.best1RM)} kg
+                          {formatWeight(h.best1RM)} lb
                         </span>
                       </div>
                     </div>

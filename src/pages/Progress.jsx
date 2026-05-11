@@ -180,7 +180,7 @@ export default function Progress() {
         {/* ── Body Part Volume ── */}
         {tab === 'bodypart' && (
           <>
-            <SectionCard title="Volume by Muscle" subtitle="Last 4 weeks (in tonnes = 1,000 kg)">
+            <SectionCard title="Volume by Muscle" subtitle="Last 4 weeks (in tonnes = 1,000 lb)">
               {bpData.length === 0 ? (
                 <p className="text-sys-label2 dark:text-white/50 text-sm py-6 text-center">No data yet.</p>
               ) : (
